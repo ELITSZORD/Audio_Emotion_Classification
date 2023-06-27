@@ -48,7 +48,6 @@ debugpy==1.6.7
 decorator==5.1.1
 defusedxml==0.7.1
 docopt==0.6.2
-dpcpp-cpp-rt==2023.1.0
 entrypoints==0.4
 executing==1.2.0
 fastjsonschema==2.16.3
