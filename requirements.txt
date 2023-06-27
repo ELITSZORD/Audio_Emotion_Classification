@@ -143,7 +143,6 @@ platformdirs==2.5.2
 plotly==5.10.0
 pluggy==1.0.0
 ply==3.11
-pocketsphinx==0.1.15
 pooch==1.4.0
 prometheus-client==0.16.0
 prompt-toolkit==3.0.38
