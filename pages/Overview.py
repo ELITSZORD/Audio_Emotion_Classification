@@ -82,7 +82,7 @@ def overv1(n_clicks):
 def hdl1(n_clicks):
     if n_clicks is not None:
         return dbc.Row([            
-            html.H1("Pre-Survey Emotional Response", style={'text-align':'center','color':'blue'})    #, style=hstyle2
+            html.H1("Pre-Survey Emotional Response", style={'text-align':'center','color':'#3A4856'})    #, style=hstyle2
                         
         ])          
     
@@ -233,7 +233,7 @@ def display_output(rows, columns):
 def hdl2(n_clicks):
     if n_clicks is not None:
         return dbc.Row([            
-            html.H1("Post-Survey Sentiment", style={'text-align':'center','color':'blue'})    
+            html.H1("Post-Survey Sentiment", style={'text-align':'center','color':'#3A4856'})    
                         
         ])           
     
