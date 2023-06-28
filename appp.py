@@ -86,8 +86,7 @@ dark=True,style=style0
 # 2. User Interface
 app.layout = dbc.Container(
     [
-        navbar, dash.page_container,
-        dbc.Row([html.Div(id='over1')]) 
+        navbar, dash.page_container
               
     ], fluid=True
 )
