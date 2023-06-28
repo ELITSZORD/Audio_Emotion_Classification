@@ -258,18 +258,249 @@ def update_output(contents):
                 html.Br(),
                 html.H4('Audio Energy:'),
                 html.Br(),
-                html.Img(src='data:image/png;base64,' + buffer_image2)
+                html.Img(src='data:image/png;base64,' + buffer_image2),
+                html.Br(),
+                dbc.Row([dbc.Col(
+                    dbc.Button(
+                    "Definition",
+                    id="left",
+                    className="mb-1",
+                    color="primary",
+                    n_clicks=0,size='sm'
+                    )
+                    ),
+                    dbc.Col(
+                    dbc.Button(
+                    "Notes",
+                    color="primary",
+                    id="right",
+                    className="mb-1",
+                    n_clicks=0,size='sm'
+                    )
+                    )
+                ]),
+                
+                dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• The first graph shows that the root mean square (RMS) energy of the audio signal is a measure of the average power of the signal."
+                                "It can be used to track the overall loudness of the signal over time."
+                                ,
+                                className="card-text",style={'font-size':13}),
+                                html.P("• The second graph shows that the log power spectrogram which is a visualization of the power of the signal as a function of frequency and time. It can be used to see how the power of the signal varies over time and frequency.",
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="left-collapse",
+                            is_open=False,
+                        )
+                    ),
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• The number of peaks in the RMS Energy plot can indicate the type of emotion being expressed, the volume of the speaker's voice, and the background noise."
+                                "However, determining an emotion requires considering multiple parameters, where energy is one of the supporting factors."
+                                ,
+                                className="card-text",style={'font-size':13}),
+                                html.P("• In a spectrogram energy plot, the high energy / loudness of audio represented by the whiter color of the spectrogram at specific time and frequency."
+                                ,
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="right-collapse",
+                            is_open=False,
+                        )
+                    ),
+                ],
+                className="mt-2",
+                )                
             ])),
             dbc.Row(html.Div([
                 html.Br(),
                 html.H4('Audio Pitch:'),
-                html.Img(src='data:image3/png;base64,' + buffer_image3)
+                html.Img(src='data:image3/png;base64,' + buffer_image3),
+                html.Br(),
+                dbc.Row([dbc.Col(
+                    dbc.Button(
+                    "Definition",
+                    id="left3",
+                    className="mb-3",
+                    color="primary",
+                    n_clicks=0,size='sm'
+                    )
+                    ),
+                    dbc.Col(
+                    dbc.Button(
+                    "Notes",
+                    color="primary",
+                    id="right3",
+                    className="mb-3",
+                    n_clicks=0,size='sm'
+                    )
+                    )
+                ]),
+                
+                dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• The STFT process divides the audio signal into overlapping short segments, also applies the Fourier Transform to each segment and resulting in a frequency representation for each time segment."
+                                "Then the amplitude of audio signal is converted to dB."
+                                ,
+                                className="card-text",style={'font-size':13}),
+                                html.P("• Pitch can provide information about the pitch of the sound level which can help machine learning in determining the emotion of an audio file.",
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="left-collapse4",
+                            is_open=False,
+                        )
+                    ),
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• The pitch level can see over time and at a specific frequency where that information can be beneficial to the model in determining the emotion type."
+                                ,
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="right-collapse4",
+                            is_open=False,
+                        )
+                    ),
+                ],
+                className="mt-4",
+                )
             ])),
             dbc.Row(html.Div([
                 html.Br(),
                 html.H4('MFCC:'),
-                html.Img(src='data:image3/png;base64,' + buffer_image4)
+                html.Img(src='data:image3/png;base64,' + buffer_image4),
+                html.Br(),
+                dbc.Row([dbc.Col(
+                    dbc.Button(
+                    "Definition",
+                    id="left5",
+                    className="mb-5",
+                    color="primary",
+                    n_clicks=0,size='sm'
+                    )
+                    ),
+                    dbc.Col(
+                    dbc.Button(
+                    "Notes",
+                    color="primary",
+                    id="right5",
+                    className="mb-5",
+                    n_clicks=0,size='sm'
+                    )
+                    )
+                ]),
+                
+                dbc.Row(
+                [
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• MFCC is a method used to extract features from audio signals and transform the representation of audio signals from the time domain to the frequency domain, taking into account human hearing characteristics." 
+                                "These coefficients provide an overview of the frequency energy distribution in the signal and reflect the human auditory system's ability to process and distinguish sounds."
+                                ,
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="left-collapse6",
+                            is_open=False,
+                        )
+                    ),
+                    dbc.Col(
+                        dbc.Collapse(
+                            dbc.Card(dbc.CardBody([
+                                html.P(
+                                "• The brighter the plot, then the highest coefficient at a specific time and frequency."
+                                "Therefore, to observe its patterns/characteristics, you can compare the MFCC plots between different emotions."
+                                ,
+                                className="card-text",style={'font-size':13})
+                            ])),
+                            id="right-collapse6",
+                            is_open=False,
+                        )
+                    ),
+                ],
+                className="mt-6",
+                ) 
             ]))     
         ])        
     else:
-            return html.Div()        
+            return html.Div() 
+
+
+# Callback Energy Description   
+
+@callback(
+    Output("left-collapse", "is_open"),
+    [Input("left", "n_clicks")]
+    , State("left-collapse", "is_open"),
+)
+def toggle_left(n_left, is_open):
+    if n_left:
+        return not is_open
+    return is_open
+
+@callback(
+    Output("right-collapse", "is_open"),
+    [Input("right", "n_clicks")]
+    , [State("right-collapse", "is_open")],
+)
+def toggle_right(n_right, is_open):
+    if n_right:
+        return not is_open
+    return is_open
+
+
+# Callback Pitch Description   
+
+@callback(
+    Output("left-collapse4", "is_open"),
+    [Input("left3", "n_clicks")]
+    , State("left-collapse4", "is_open"),
+)
+def toggle_left(n_left, is_open):
+    if n_left:
+        return not is_open
+    return is_open
+
+@callback(
+    Output("right-collapse4", "is_open"),
+    [Input("right3", "n_clicks")]
+    , [State("right-collapse4", "is_open")],
+)
+def toggle_right(n_right, is_open):
+    if n_right:
+        return not is_open
+    return is_open
+
+
+# Callback MFCC Description   
+
+@callback(
+    Output("left-collapse6", "is_open"),
+    [Input("left5", "n_clicks")]
+    , State("left-collapse6", "is_open"),
+)
+def toggle_left(n_left, is_open):
+    if n_left:
+        return not is_open
+    return is_open
+
+@callback(
+    Output("right-collapse6", "is_open"),
+    [Input("right5", "n_clicks")]
+    , [State("right-collapse6", "is_open")],
+)
+def toggle_right(n_right, is_open):
+    if n_right:
+        return not is_open
+    return is_open

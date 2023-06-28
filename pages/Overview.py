@@ -81,9 +81,9 @@ def overv1(n_clicks):
 def hdl1(n_clicks):
     if n_clicks is not None:
         return dbc.Row([            
-            html.H1("Pre-Survey Emotional Response", style=hstyle2)    
+            html.H1("Pre-Survey Emotional Response", style={'text-align':'center','color':'blue'})    #, style=hstyle2
                         
-        ])           
+        ])          
     
     else:
         return html.Div()
@@ -98,7 +98,7 @@ def dropd1(n_clicks):
         return dbc.Row([            
             dcc.Dropdown(
                             ['Product', 'Campaign', 'Specific Survey/Questionnaire Question No. 1','Specific Survey/Questionnaire Question No. 2'],
-                            searchable=False, placeholder="Choose an Observed",style=hstyle3)    
+                            searchable=False, placeholder="Choose an Observed", style={'text-align':'center','color':'brown'})    
                         
         ])           
     
@@ -232,7 +232,7 @@ def display_output(rows, columns):
 def hdl2(n_clicks):
     if n_clicks is not None:
         return dbc.Row([            
-            html.H1("Post-Survey Sentiment", style=hstyle2)    
+            html.H1("Post-Survey Sentiment", style={'text-align':'center','color':'blue'})    
                         
         ])           
     
@@ -249,7 +249,7 @@ def dropd2(n_clicks):
         return dbc.Row([            
             dcc.Dropdown(
                             ['Product', 'Campaign', 'Specific Survey/Questionnaire Question No. 1','Specific Survey/Questionnaire Question No. 2'],
-                            searchable=False, placeholder="Choose an Observed",style=hstyle3)    
+                            searchable=False, placeholder="Choose an Observed", style={'text-align':'center','color':'brown'})    
                         
         ])           
     
