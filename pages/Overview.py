@@ -39,7 +39,8 @@ hstyle3 = {"background": "#55936D", "color": "blue", "font-size": "20px"}
 hstyle4 = {"background": "#339288", "color": "white", "font-size": "19px",'width': '20%'}
 
 hstyle5 = {"color": "black", "font-size": "14px",'width': '22%', 'text-align':'center'}
-hstyle6 = {"color": "black", "font-size": "20px",'width': '20%', 'text-align':'center'}
+hstyle55 = {"color": "white", "font-size": "14px",'width': '22%', 'text-align':'center'}
+hstyle6 = {"color": "black", "font-size": "20px",'width': '22.09%', 'text-align':'center'}
 
 layout = html.Div(id='over1')
 
@@ -141,12 +142,12 @@ def display1(btn1, btn2, btn3, btn4):
                      html.Th('Happiness (y1)',style=hstyle5),
                      html.Th('Neutral (y2)',style=hstyle5),
                      html.Th('Sadness (y3)',style=hstyle5),                     
-                     html.Th('Most Recent Click')]),
+                     html.Th('Most Recent Click',style=hstyle55)]),
             html.Tr([html.Td(btn1 or 0,style=hstyle6), 
                      html.Td(btn2 or 0,style=hstyle6), 
                      html.Td(btn3 or 0,style=hstyle6), 
                      html.Td(btn4 or 0,style=hstyle6), 
-                     html.Td(button_id1,style=hstyle6)])
+                     html.Td(button_id1,style=hstyle55)])
         ])
     ])])
 
@@ -293,12 +294,12 @@ def display3(btn1, btn2, btn3, btn4, btn5):
                      html.Th('Happiness (y1)',style=hstyle5),
                      html.Th('Neutral (y2)',style=hstyle5),
                      html.Th('Sadness (y3)',style=hstyle5),
-                     html.Th('Most Recent Click')]),
+                     html.Th('Most Recent Click',style=hstyle55)]),
             html.Tr([html.Td(btn1 or 0,style=hstyle6), 
                      html.Td(btn2 or 0,style=hstyle6), 
                      html.Td(btn3 or 0,style=hstyle6), 
                      html.Td(btn4 or 0,style=hstyle6), 
-                     html.Td(button_id2,style=hstyle6)])
+                     html.Td(button_id2,style=hstyle55)])
         ])
     ])])
 
