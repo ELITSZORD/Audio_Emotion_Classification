@@ -48,16 +48,22 @@ hstyle6 = {"color": "black", "font-size": "20px",'width': '20%', 'text-align':'c
 
 
 ## 1.4. Dashboard Core Components, Python Code, others. 
-
+### Logo
+linkedin = "https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-ya5g47j2.png"
+rstudio = "https://www.pngall.com/wp-content/uploads/2017/05/Copyright-Symbol-R-Free-Download-PNG.png"
+github = "https://www.svgrepo.com/show/361181/github.svg"
 
 ### 1.4.1. Navbar Core Components
 navbar = dbc.NavbarSimple(    
-    children=[                           
+    children=[
+        #dbc.NavItem(dbc.NavLink("Home", id='home1',href=dash.page_registry['pages.Home']['path'])),                           
         dbc.DropdownMenu(
             [
                 dbc.DropdownMenuItem(page["name"], href=page["path"])
                 for page in dash.page_registry.values()
                 if page["module"] != "pages.Overview"
+                and page["module"] != "pages.not_found_404"
+                if page["module"] != "pages.Profile"
                 and page["module"] != "pages.not_found_404"
 
             ],
@@ -75,7 +81,45 @@ navbar = dbc.NavbarSimple(
         nav=True,
         in_navbar=True
         ,
-        label="More")
+        label="More"),
+        dbc.NavItem(dbc.NavLink("Profile", id='prof',href=dash.page_registry['pages.Profile']['path']))
+        ,
+        html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=linkedin, height="45px")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                href="https://www.linkedin.com/in/faisal-adhisthana-nugraha-111503125/",
+                style={"textDecoration": "none"},
+            ),
+        html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=rstudio, height="45px")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                href="https://rpubs.com/ELITSZORD",
+                style={"textDecoration": "none"},
+            ),
+        html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=github, height="45px")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                href="https://github.com/ELITSZORD",
+                style={"textDecoration": "none"},
+            )
     ],
 brand="Market Research Dashboard", 
 brand_href="#",
@@ -89,6 +133,8 @@ dark=True,style=style0
 app.layout = dbc.Container(
     [
         navbar, dash.page_container
+        # ,
+        # dbc.Row([html.Div(id='over1')]) 
               
     ], fluid=True
 )
