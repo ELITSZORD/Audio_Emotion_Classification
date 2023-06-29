@@ -77,7 +77,7 @@ navbar = dbc.NavbarSimple(
         ,
         label="More")
     ],
-brand="More", 
+brand="Market Research Dashboard", 
 brand_href="#",
 color="#3A4856",
 dark=True,style=style0
