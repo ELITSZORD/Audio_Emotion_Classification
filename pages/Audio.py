@@ -63,10 +63,11 @@ layout = dbc.Col([
         html.Br(),
         html.Div([upl]), #Upload File
         html.Br(),
-        html.Div(id='output'), # Plots
-        html.Br(),
         html.Button(id='submit-button-state', n_clicks=0, children='Predict'),
-        html.Div(id='output-state')
+        html.Div(id='output-state',style={'text-align':'center'}),
+        html.Br(),
+        html.Div(id='output'), # Plots
+        
     ])
 ])
 
@@ -250,7 +251,7 @@ def update_output(contents):
             html.H3('Uploaded WAV file:',style=hstyle1),
             dbc.Row(html.Div([
                 html.Audio(src=contents, controls=True),
-                html.Img(src='data:image/png;base64,' + buffer_image1)
+                html.Img(src='data:image/png;base64,' + buffer_image1),
             ])),
             dbc.Row(html.Div([
                 html.Br(),

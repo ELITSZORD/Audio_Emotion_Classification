@@ -68,14 +68,16 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink("Overview Results", id='overview',href=dash.page_registry['pages.Overview']['path'])),        
         dbc.DropdownMenu(
             children=[
-                dbc.DropdownMenuItem("More pages", header=True),
-                dbc.DropdownMenuItem("Real Time New Feature")],
+                dbc.DropdownMenuItem("Future Development", header=True),                
+                dbc.DropdownMenuItem("Real Time New Feature"),
+                dbc.DropdownMenuItem("Text Summarization"),
+                dbc.DropdownMenuItem("Video Emotion Classification")],
         nav=True,
         in_navbar=True
         ,
         label="More")
     ],
-brand="Market Research Dashboard", 
+brand="More", 
 brand_href="#",
 color="#3A4856",
 dark=True,style=style0
