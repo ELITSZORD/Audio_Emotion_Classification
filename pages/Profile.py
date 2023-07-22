@@ -1,5 +1,5 @@
 import dash
-import dash_html_components as html
+import dash as html
 import base64
 from PIL import Image
 from dash import callback

@@ -40,13 +40,6 @@ for image_file3 in image_files3:
     img3 = Image.open(os.path.join(image_directory3, image_file3))
     data3.append(img3)
 
-## Image 4 - size=750X450
-image_directory4 = './asset/'
-image_files4 = ["My_profile.png"]  
-data4 = []
-for image_file4 in image_files4:
-    img4 = Image.open(os.path.join(image_directory4, image_file4))
-    data4.append(img4)
 
 
 ## Style
@@ -62,8 +55,7 @@ layout = dbc.Row([
                     [
                         {"key": "1", "src": data1,"img_style":{"width":"1500px","height":"695px" }, "imgClassName": ""},
                         {"key": "2", "src": data2,"img_style":{"width":"1500px","height":"695px" }, "imgClassName": ""},
-                        {"key": "3", "src": data3,"img_style":{"width":"1500px","height":"695px" }, "imgClassName": ""},
-                        {"key": "4", "src": data4,"img_style":{"width":"1500px","height":"695px" }, "imgClassName": ""}
+                        {"key": "3", "src": data3,"img_style":{"width":"1500px","height":"695px" }, "imgClassName": ""}
                     ]
                     ,
                     controls=True,
