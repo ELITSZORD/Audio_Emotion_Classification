@@ -1,5 +1,5 @@
 import dash
-import dash as html
+from dash import html
 import base64
 from PIL import Image
 from dash import callback
